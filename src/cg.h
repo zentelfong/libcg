@@ -336,9 +336,9 @@ void cg_stroke(struct cg_ctx_t * ctx);
 void cg_stroke_preserve(struct cg_ctx_t * ctx);
 void cg_paint(struct cg_ctx_t * ctx);
 
-struct cg_surface_t* cg_load_img_file(const char* path);
-struct cg_surface_t* cg_load_img_file_crop(const char* path, int crop_w, int crop_h);
-int cg_save_img_file(struct cg_surface_t* surface,const char* path);
+struct cg_surface_t* cg_surface_load_file(const char* path);
+struct cg_surface_t* cg_surface_load_file_crop(const char* path, int crop_w, int crop_h);
+int cg_surface_save_file(struct cg_surface_t* surface,const char* path);
 
 #ifdef __cplusplus
 }

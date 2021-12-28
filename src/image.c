@@ -33,7 +33,7 @@ static struct cg_surface_t* cg__pixel_to_surface(stbi_uc* data,int w,int h) {
 }
 
 
-struct cg_surface_t* cg_load_img_file(const char* path) {
+struct cg_surface_t* cg_surface_load_file(const char* path) {
 	int w, h, channels_in_file;
 
 	if (!path) {
@@ -50,7 +50,7 @@ struct cg_surface_t* cg_load_img_file(const char* path) {
 	return surface;
 }
 
-struct cg_surface_t* cg_load_img_file_crop(const char* path,int crop_w,int crop_h) {
+struct cg_surface_t* cg_surface_load_file_crop(const char* path,int crop_w,int crop_h) {
 	int w, h, channels, nw, nh;
 	uint8_t* scaled_data = NULL;
 	struct cg_surface_t* surface = NULL;
@@ -130,7 +130,7 @@ Error:
 }
 
 
-int cg_save_img_file(struct cg_surface_t* surface, const char* path) {
+int cg_surface_save_file(struct cg_surface_t* surface, const char* path) {
 	int rslt = 0;
 	unsigned char* data = surface->pixels;
 	int width = surface->width;
